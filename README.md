@@ -57,6 +57,39 @@ $ cd docker
 $ sudo docker compose up -d
 ```
 
+## To stop the continer 
+```bash
+sudo docker stop $(sudo docker ps -aq)
+```
+## To reomve the continer 
+
+
+```bash
+sudo docker rm $(sudo docker ps -aq)
+```
+
+
+## To reomve the images 
+
+
+```bash
+sudo docker rmi $(sudo docker ps -q)
+```
+
+
+
+
+## To reomve the images 
+
+
+```bash
+sudo docker volume rm $(sudo docker ps -q)
+```
+## To reomve All 
+
+```bash
+sudo docker system prune --all
+```
 
 
 ## Run the FastAPI server
