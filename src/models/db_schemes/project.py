@@ -6,8 +6,6 @@ class Project(BaseModel):
     id: Optional[ObjectId] = Field(None, alias="_id")
     project_id: str = Field(..., min_length=1)
 
-
-    #STATIC METHODS
     @validator('project_id')
     def validate_project_id(cls, value):
         if not value.isalnum():
@@ -20,15 +18,13 @@ class Project(BaseModel):
 
     @classmethod
     def get_indexes(cls):
-        return [
-        {
-                "key":[
 
+        return [
+            {
+                "key": [
                     ("project_id", 1)
-                
                 ],
-                "name":"project_id_index_1",
-                "unique":True,
-            
-        }
+                "name": "project_id_index_1",
+                "unique": True
+            }
         ]
